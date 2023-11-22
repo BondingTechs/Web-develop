@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"); */
+
+// 自定義全局
+*:focus {
+  outline: none !important;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input {
+  -webkit-user-select: auto;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* 顯示前綴排序號碼 */
+.counter-step .counter-item {
+  counter-increment: step-counter;
+}
+.counter-step .counter-item:before {
+  content: counter(step-counter);
+  margin-right: 20px;
+  font-size: 80%;
+  color: theme("colors.green.400");
+  font-weight: bold;
+  font-size: 40px;
+}
+
+/* 換行省略號 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--tw-text-clamp);
+  -webkit-box-orient: vertical;
+  --tw-text-clamp: 2;
+}
+.ellipsis-1 {
+  --tw-text-clamp: 1;
+}
+.ellipsis-2 {
+  --tw-text-clamp: 2;
+}
+.ellipsis-3 {
+  --tw-text-clamp: 3;
+}
+.ellipsis-4 {
+  --tw-text-clamp: 4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.article-content {
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  img {
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+
+  p {
+    margin: 16px 0;
+  }
+}
+
+// 滾動
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.100');
+  border-left: 1px solid theme('colors.gray.200');
+}
+::-webkit-scrollbar-thumb {
+  border: 4px solid theme('colors.gray.100');
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: theme('colors.slate.300');
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.slate.400');
+}
+.dark ::-webkit-scrollbar-track {
+  background: theme('colors.slate.800');
+  border-left: 1px solid theme('colors.slate.700');
+}
+.dark ::-webkit-scrollbar-thumb {
+  border-color: theme('colors.slate.800');
+  background-color: theme('colors.slate.500');
+}
+.dark  ::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.slate.400');
+}
+
+/* transitions */
+.page-enter-active {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transition: all .15s ease-out;
+}
+.page-leave-active {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transition: all .15s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.page-enter-from,
+.page-leave-to {
+  /* transform: translateY(10px); */
+  opacity: 0;
+}
+
+.layout-enter-active {
+  position: absolute;
+  transition: all 0.15s ease-out;
+}
+.layout-leave-active {
+  transition: all 0.15s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.layout-enter-from,
+.layout-leave-to {
+  /* transform: translateY(-20px); */
+  opacity: 0;
+}
+
+.article-content {
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+  }
+}
+
+.vc-switch {
+  right: 15px !important;
+  bottom: 75px !important;
+}
+
+body {
+  @media only screen and (max-width: 767px) {
+    font-size: 0.9rem
+  }
+}
+
+img[data-href] {
+  cursor: pointer;
+}
+
+img[data-href=''] {
+  cursor: auto;
+}
+
+a * {
+  pointer-events: none;
+}
+
+// td, th {
+//   border: 1px solid black;
+//   text-align: center;
+//   padding: 2px 6px;
+// }
+
+table {
+  @apply table-auto border dark:border-gray-700;
+  tr {
+    @apply border-b dark:bg-gray-900 dark:border-gray-700;
+  }
+  th {
+    @apply bg-gray-50 dark:bg-gray-700 border-b dark:border-gray-700 px-3 py-4;
+  }
+  td {
+    @apply border-b dark:border-gray-700 px-3 py-4;
+  }
+}
