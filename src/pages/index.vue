@@ -14,7 +14,7 @@ const { data: hotNews }: any = await useHttpPost('top-articles', '/news/list', {
 const { data: videoNews }: any = await useHttpPost(
   'video-articles',
   '/news/list',
-  { body: { type: 'video', size: 8 } },
+  { body: { type: 12, size: 8 } },
 )
 
 // infinite page
@@ -31,7 +31,7 @@ const loadNews = async () => {
   const size = newsPage.value?.pagination.size
   const { data }: any = await $fetch('/api/news/page', {
     method: 'POST',
-    body: { type: 'normal', size, page: page + 1 },
+    body: { type: 11, size, page: page + 1 },
   })
   const list = data?.list ?? []
 

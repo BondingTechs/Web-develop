@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import type { IApp } from "~/utils/initApp";
+import type { IApp } from '~/utils/initApp'
 
 export interface IMenuItem {
-  type: "link" | "button";
-  text: string;
-  href?: any;
-  route?: any;
+  type: 'link' | 'button'
+  text: string
+  href?: any
+  route?: any
 }
 
-const app = useState<IApp>("app");
+const app = useState<IApp>('app')
 
-const menus = ref<IMenuItem[]>([{ type: "link", text: "新聞", route: "/" }]);
+const menus = ref<IMenuItem[]>([{ type: 'link', text: '新聞', route: '/' }])
 </script>
 
 <template>
@@ -30,7 +30,7 @@ const menus = ref<IMenuItem[]>([{ type: "link", text: "新聞", route: "/" }]);
               >
                 <span class="sr-only">home</span>
                 <span class="flex items-center">
-                  <img class="lg:w-18 w-12 mr-2" src="/logo.png" />
+                  <img class="lg:w-18 w-12 mr-2" src="/logo.png">
                   <span class="leading-7 mt-[1px]">{{ app.name }}</span>
                 </span>
               </NuxtLink>

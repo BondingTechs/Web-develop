@@ -1,4 +1,4 @@
-<!-- <script lang="ts" setup>
+<script lang="ts" setup>
 import {
   Listbox,
   ListboxButton,
@@ -19,7 +19,7 @@ const local = computed(() => {
 
 <template>
   <div>
-    <Listbox
+    <!-- <Listbox
       v-model="local"
       as="div"
       class="relative flex items-center"
@@ -57,6 +57,6 @@ const local = computed(() => {
           </span>
         </NuxtLink>
       </ListboxOptions>
-    </Listbox>
+    </Listbox> -->
   </div>
-</template> -->
+</template>

@@ -12,17 +12,18 @@ export default defineNuxtConfig({
         // apiBase: 'http://127.0.0.1:8001/app',
         apiBase: 'https://admin.bondingtechs.com/api/app',
         apiUpload: 'https://admin.bondingtechs.com/api',
-      }
-    }
+      },
+    },
   },
   $development: {
     runtimeConfig: {
       public: {
-        apiBase: 'http://127.0.0.1:8001/app',
-        // apiBase: 'https://admin.bondingtechs.com/api/app',
-        apiUpload: 'http://127.0.0.1:8001/',
+        // apiBase: 'http://127.0.0.1:8001/app',
+        // apiUpload: 'http://127.0.0.1:8001/',
+        apiBase: 'https://admin.bondingtechs.com/api/app',
+        apiUpload: 'https://admin.bondingtechs.com/api',
       },
-    }
+    },
   },
   srcDir: 'src',
   modules: [
@@ -58,7 +59,7 @@ export default defineNuxtConfig({
     shortcuts: {
       'light-img': 'block dark:hidden',
       'dark-img': 'hidden dark:block',
-      'cma': 'mx-auto w-full max-w-90em lt-sm:px-4',
+      'cma': 'mx-auto w-full 2xl:max-w-90em lg:max-w-72em lt-lg:px-4',
       'fic': 'flex items-center',
 
       'p-c':
@@ -130,7 +131,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     hooks: {
-      'dev:reload': () => require('sharp')
-    }
-  }
+      'dev:reload': () => require('sharp'),
+    },
+  },
 })

@@ -7,7 +7,7 @@ definePageMeta({
 const { data: videoNews }: any = await useHttpPost(
   'video-news-list',
   '/news/page',
-  { body: { type: 'video', size: 12 } },
+  { body: { type: 12, size: 12 } },
 )
 
 const loading = ref(false)
@@ -17,7 +17,7 @@ const loadNews = async () => {
   const size = videoNews.value.pagination.size
   const { data }: any = await $fetch('/api/news/page', {
     method: 'POST',
-    body: { type: 'video', size, page: page + 1 },
+    body: { type: 12, size, page: page + 1 },
   })
   const list = data?.list ?? []
 
